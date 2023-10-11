@@ -2,8 +2,8 @@ import React, {FC} from "react";
 
 
 type AddressType = {
-  street: string
-  city: string
+    street: string
+    city: string
 };
 
 type UserType = {
@@ -21,25 +21,27 @@ type UserListPropsType = {
 };
 
 export const UserList = (props: UserListPropsType) => {
-  return (
+    return (
 
-    <div id={'hw01-users'}>
-      <h2>User List:</h2>
+        <div id={'hw01-users'}>
+            <h2>User List:</h2>
 
-      <ul>
-        {props.users.map( (el) => {
-            return (
-                 <li key={el.id}>
-                 id={`hw01-user-${el.id}`}
-                <strong>{el.name}</strong>
-                (Age: {el.age})
-                <strong>Address:</strong>
-                {el.address.street}, {el.address.city}
-            </li>
-            )
-        })}
-      </ul>
+            <ul>
+                {props.users.map((user) => {
+                    return (
+                        <li key={user.id}
+                            id={`hw01-user-${user.id}`}>
+                            <strong> {user.name}</strong>
+                            (Age: {user.age})
+                            <strong> Address: </strong>
+                            {user.address.street}, {user.address.city}
+                        </li>
+                    )
+                })}
+</ul>
 
-    </div>
-  );
-};
+</div>
+)
+;
+}
+;
